@@ -1,0 +1,33 @@
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace firstProblemMidleExam
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<string> first = Console.ReadLine().Split('|', StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            first.Reverse();
+
+            List<int> last = new List<int>();
+
+            
+
+            foreach (var item in first)
+            {
+                last.AddRange(item.Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                        .Select(int.Parse)
+                        .ToList()
+                         );
+            }
+
+            Console.WriteLine(String.Join(' ', last));
+        }
+
+    }
+}
